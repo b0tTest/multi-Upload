@@ -13,8 +13,8 @@ from config import Config
 @anjana.on(events.NewMessage(pattern='^/anonfile'))
 async def anonfile(event):
 	user_id = event.sender_id
-        if event.is_private and not await check_participant(user_id, f'@{Config.CHNAME}', event):
-		return
+        #if event.is_private and not await check_participant(user_id, f'@{Config.CHNAME}', event):
+		#return
 	if event.reply_to_msg_id:
 		pass
 	else:
