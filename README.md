@@ -1,4 +1,4 @@
-# oVo MultiUpload V1.0 👀 [Repo](https://github.com/oVoIndia/MultiUpload-Botl
+# oVo MultiUpload V1.0 👀 [Repo](https://github.com/oVoIndia/MultiUpload-Botl)
 
 #### _A Bot to Upload files to Many Cloud services. Powered by Telethon_
 
