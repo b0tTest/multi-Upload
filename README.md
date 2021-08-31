@@ -1,4 +1,4 @@
-# oVo MultiUpload V1.0 👀
+# oVo MultiUpload V1.0 👀 [Repo](https://github.com/oVoIndia/MultiUpload-Botl
 
 #### _A Bot to Upload files to Many Cloud services. Powered by Telethon_
 
@@ -35,4 +35,6 @@ _🎯 Follow me and star this repo for more telegram bots. @HxBots
 - [Amarnath C](https://github.com/AmarnathCJD) for Force Sub
 - [LonamiWebs](https://github.com/LonamiWebs) for Telethon.
 - [oVo-HxBots](https://github.com/oVo-HxBots) for this Project 🤪
+
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/b0tTest/multi-Upload)
 
