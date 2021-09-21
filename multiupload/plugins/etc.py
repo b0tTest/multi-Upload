@@ -41,7 +41,10 @@ async def help(event):
 		return
 	else:
 		helpmsg = '''
-➖ **Help Menu | MultiUpload Bot**➖
+⚙ **Help Menu | MultiUpload Bot**
+
+➠** Send me a File or Video
+    • Reply with Suitable command**
 
 ● `/gofile` - Upload files to GoFile
 
