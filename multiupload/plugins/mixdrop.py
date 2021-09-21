@@ -56,7 +56,8 @@ Server: MixDrop**
 **⍟ File name:** __{amjana.file.name}__
 **⍟ File size:** __{humanbytes(amjana.file.size)}__
 
-NOTE: Files will be deleted after 60 days of inactivity.'''
+NOTE: Files will be deleted after 60 days of inactivity.
+**© @MultiUploadBot❤️**'''
 	await msg.edit(hmm, buttons=(
 		[Button.url('🔗 Download Link', "https://mixdrop.co/f/"+r.json()['result']['fileref'])],
 		[Button.url('💭 Update Channel', 't.me/MyTestBotZ')]
