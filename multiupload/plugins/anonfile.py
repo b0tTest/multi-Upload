@@ -13,6 +13,7 @@ from config import Config
 @anjana.on(events.NewMessage(pattern='^/anonfile'))
 async def anonfile(event):
 	user_id = event.sender_id
+	
         if event.is_private and not await check_participant(user_id, f'@{Config.CHNAME}', event):
 		return
 	if event.reply_to_msg_id:
@@ -58,7 +59,7 @@ Server: AnonFile**
 NOTE: Cant find notes. Its also anonymous 🤕'''
 	await msg.edit(hmm, buttons=(
 		[Button.url('🔗 Download Link', r.json()["data"]["file"]["url"]["short"])],
-		[Button.url('💭 Channel', 't.me/hxsupport')]
+		[Button.url('💭 Channel', 't.me/MyTestBotZ')]
 		))
 
 	os.remove(result.name)
