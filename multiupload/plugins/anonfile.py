@@ -28,6 +28,7 @@ async def anonfile(event):
 	## LOGGING TO A CHANNEL
 	xx = await event.get_chat()
 	reqmsg = f'''Req User: [{xx.first_name}](tg://user?id={xx.id})
+	
 FileName: {amjana.file.name}
 FileSize: {humanbytes(amjana.file.size)}
 #ANONFILE'''
@@ -48,15 +49,16 @@ FileSize: {humanbytes(amjana.file.size)}
 		r = post(url, files={'file': open(f'{result.name}','rb')})
 	await anjana.action(event.chat_id, 'cancel')
 
-	hmm = f'''File Uploaded successfully !!
-Server: AnonFile
+	hmm = f'''**File Uploaded successfully !!
+Server: AnonFile**
 
-**~ File name:** __{amjana.file.name}__
-**~ File size:** __{humanbytes(amjana.file.size)}__
+**⍟ File name:** __{amjana.file.name}__
+**⍟ File size:** __{humanbytes(amjana.file.size)}__
+
 NOTE: Cant find notes. Its also anonymous 🤕'''
 	await msg.edit(hmm, buttons=(
-		[Button.url('📦 Download', r.json()["data"]["file"]["url"]["short"])],
-		[Button.url('Support Chat 💭', 't.me/hxsupport')]
+		[Button.url('🔗 Download Link', r.json()["data"]["file"]["url"]["short"])],
+		[Button.url('💭 Channel', 't.me/hxsupport')]
 		))
 
 	os.remove(result.name)
