@@ -55,13 +55,13 @@ FileSize: {humanbytes(amjana.file.size)}
 	hmm = f'''**File Uploaded successfully !!
 Server: FileIO**
 
-**~ File name:** __{amjana.file.name}__
-**~ File size:** __{humanbytes(amjana.file.size)}__
+**⍟ File name:** __{amjana.file.name}__
+**⍟ File size:** __{humanbytes(amjana.file.size)}__
 
 NOTE: Once the download is complete, The file will be deleted from our servers.'''
 	await msg.edit(hmm, buttons=(
-		[Button.url('📦 Download', r.json()['link'])],
-		[Button.url('Support Chat 💭', 't.me/hxsupport')]
+		[Button.url('🔗 Download Link', r.json()['link'])],
+		[Button.url('💭 Channel', 't.me/MyTestBotZ')]
 		))
 
 	os.remove(result.name)
