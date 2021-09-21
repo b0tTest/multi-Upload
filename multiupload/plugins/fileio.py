@@ -15,10 +15,9 @@ async def fileio(event):
 	user_id = event.sender_id
 	if event.is_private and not await check_participant(user_id, f'@{Config.CHNAME}', event):
 		return
-	if event.reply_to_msg_id:
-		pass
-	else:
+	if not event.reply_to_msg_id:
 		return await event.edit("Please Reply to File")
+
 
 	async with anjana.action(event.chat_id, 'typing'):
 		await asyncio.sleep(2)
@@ -33,6 +32,7 @@ async def fileio(event):
 	## LOGGING TO A CHANNEL
 	xx = await event.get_chat()
 	reqmsg = f'''Req User: [{xx.first_name}](tg://user?id={xx.id})
+	
 FileName: {amjana.file.name}
 FileSize: {humanbytes(amjana.file.size)}
 #FILEIO'''
@@ -43,7 +43,7 @@ FileSize: {humanbytes(amjana.file.size)}
 		amjana.media.document,
 		msg,
 		time.time(),
-		f"**🏷 Downloading...**\n➲ **File Name:** {amjana.file.name}",
+		f"**🏷 Downloading...**\n➲ **File Name:** {amjana.file.name}\n",
 	)
 
 	async with anjana.action(event.chat_id, 'document'):
@@ -52,11 +52,12 @@ FileSize: {humanbytes(amjana.file.size)}
 		r = post(url, files={'file': open(f'{result.name}','rb')})
 	await anjana.action(event.chat_id, 'cancel')
 
-	hmm = f'''File Uploaded successfully !!
-Server: FileIO
+	hmm = f'''**File Uploaded successfully !!
+Server: FileIO**
 
 **~ File name:** __{amjana.file.name}__
 **~ File size:** __{humanbytes(amjana.file.size)}__
+
 NOTE: Once the download is complete, The file will be deleted from our servers.'''
 	await msg.edit(hmm, buttons=(
 		[Button.url('📦 Download', r.json()['link'])],
