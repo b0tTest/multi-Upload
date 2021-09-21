@@ -15,9 +15,7 @@ async def ufile(event):
 	user_id = event.sender_id
 	if event.is_private and not await check_participant(user_id, f'@{Config.CHNAME}', event):
 		return
-	if event.reply_to_msg_id:
-		pass
-	else:
+	if not event.reply_to_msg_id:
 		return await event.edit("Please Reply to File")
 
 	async with anjana.action(event.chat_id, 'typing'):
@@ -39,7 +37,7 @@ FileSize: {humanbytes(amjana.file.size)}
 		amjana.media.document,
 		msg,
 		time.time(),
-		f"**🏷 Downloading...**\n➲ **File Name:** {amjana.file.name}",
+		f"**🏷 Downloading...**\n➲ **File Name:** {amjana.file.name}\n",
 	)
 
 	async with anjana.action(event.chat_id, 'document'):
@@ -61,15 +59,16 @@ FileSize: {humanbytes(amjana.file.size)}
 			})
 	await anjana.action(event.chat_id, 'cancel')
 
-	hmm = f'''File Uploaded successfully !!
-Server: UFile
+	hmm = f'''**File Uploaded successfully !!
+Server: UFile**
 
-**~ File name:** __{amjana.file.name}__
-**~ File size:** __{humanbytes(amjana.file.size)}__
+**⍟ File name:** __{amjana.file.name}__
+**⍟ File size:** __{humanbytes(amjana.file.size)}__
+
 NOTE: Bandwidth limit is 1MB/s. After a month files will be deleted.'''
 	await msg.edit(hmm, buttons=(
-		[Button.url('📦 Download', r3.json()['url'])],
-		[Button.url('Support Chat 💭', 't.me/hxsupport')]
+		[Button.url('🔗 Download Link', r3.json()['url'])],
+		[Button.url('💭 Update Channel', 't.me/mytestbotz')]
 		))
 
 	os.remove(result.name)
