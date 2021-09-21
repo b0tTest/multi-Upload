@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 # (c) oVoIndia | oVo-HxBots
 
+import os
 import asyncio, random
 from config import Config
 from telethon import events, Button
@@ -25,8 +26,8 @@ async def start(event):
 		return
 	else:
 		await anjana.send_file(event.chat_id, random.choice(s), reply_to=event)
-		await event.reply(f"Hey [{xx.first_name}]({xx.id}), I am **MultiUploader**", buttons=[
-				Button.url('Support Chat 💭', 't.me/hxsupport')
+		await event.reply(f"Hey [{xx.first_name}]({xx.id}), I am **MultiUploader** bot which can upload file to many cloud services ", buttons=[
+				Button.url('💭Channel', 't.me/mytestbotz')
 			])
 
 
@@ -41,16 +42,25 @@ async def help(event):
 	else:
 		helpmsg = '''
 ➖ **Help Menu | MultiUpload Bot**➖
+
 ● `/gofile` - Upload files to GoFile
+
 ● `/anonfile` - Upload files to AnonFile
+
 ● `/ufile` - Upload files to UFile
+
 ● `/bayfiles` - Upload files to BayFiles
+
 ● `/tsh` - Upload files to TransferSH
+
 ● `/tninja` - Upload files to TmNinja
+
 ● `/fileio` - Upload files to FileIO
+
 ● `/mixdrop` - Upload files to MixDrop
-✦ **Powered By [oVoIndia]**(https://github.com/oVoIndia)
-✦ Made with ♥️ by [HxBots](t.me/hxbots)'''
+
+✦ **Powered By [MyTestBotZ]**(https://telegram.me/MyTestBotZ)
+✦ Made with ♥️ by @OO7ROBot'''
 		await event.reply(helpmsg, buttons=[
-				Button.url('Support Chat 💭', 't.me/hxsupport')
+				Button.url('💭 channel', 'telegram.me/MyTestBotZ')
 			], link_preview=False)
