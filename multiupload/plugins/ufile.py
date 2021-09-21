@@ -65,7 +65,8 @@ Server: UFile**
 **⍟ File name:** __{amjana.file.name}__
 **⍟ File size:** __{humanbytes(amjana.file.size)}__
 
-NOTE: Bandwidth limit is 1MB/s. After a month files will be deleted.'''
+NOTE: Bandwidth limit is 1MB/s. After a month files will be deleted.
+**© @MultiUploadBot❤️**'''
 	await msg.edit(hmm, buttons=(
 		[Button.url('🔗 Download Link', r3.json()['url'])],
 		[Button.url('💭 Update Channel', 't.me/mytestbotz')]
