@@ -64,3 +64,33 @@ async def help(event):
 		await event.reply(helpmsg, buttons=[
 				Button.url('💭 channel', 'telegram.me/MyTestBotZ')
 			], link_preview=False)
+
+		
+		
+#### about ######
+@anjana.on(events.NewMessage(pattern='^/about'))
+async def about(event):
+	async with anjana.action(event.chat_id, 'typing'):
+		await asyncio.sleep(3)
+	user_id = event.sender_id
+	xx = await event.get_chat()
+	if event.is_private and not await check_participant(user_id, f'@{Config.CHNAME}', event):
+		return
+	else:
+		aboutmsg = '''**
+Hey👋, I'm a MultiUploadBot Created for [Him](https://telegram.me/OO7ROBOT)...
+
+● Channel : [MyTestBotZ](https://telegram.me/MyTestBotZ)
+
+● Language : [Python](https://www.python.org/)
+
+● Library : [Pyrogram 1.2.9](https://docs.pyrogram.org/)
+
+● Server : [Heroku](https://Heroku.com)
+
+● Build Version : [Beta V1](https://t.me/Multiuploadbot)
+
+**'''
+		await event.reply(aboutmsg, buttons=[
+				Button.url('💭 channel', 'telegram.me/MyTestBotZ')
+			], link_preview=False)
