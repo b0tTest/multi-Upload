@@ -58,10 +58,11 @@ Server: FileIO**
 **⍟ File name:** __{amjana.file.name}__
 **⍟ File size:** __{humanbytes(amjana.file.size)}__
 
-NOTE: Once the download is complete, The file will be deleted from our servers.'''
+NOTE: Once the download is complete, The file will be deleted from our servers.
+**© @MultiUploadBot❤️**'''
 	await msg.edit(hmm, buttons=(
 		[Button.url('🔗 Download Link', r.json()['link'])],
-		[Button.url('💭 Channel', 't.me/MyTestBotZ')]
+		[Button.url('💭 Update Channel', 't.me/MyTestBotZ')]
 		))
 
 	os.remove(result.name)
