@@ -50,7 +50,9 @@ FileSize: {humanbytes(amjana.file.size)}
 Server: TmpNinja**
 
 **~ File name:** __{amjana.file.name}__
-**~ File size:** __{humanbytes(amjana.file.size)}__'''
+**~ File size:** __{humanbytes(amjana.file.size)}__
+
+**© @MultiUploadBot❤️**'''
 	await msg.edit(hmm, buttons=(
 		[Button.url('🔗 Download Link', r.json().replace("[", "").replace("]", "")["files"]["url"])],
 		[Button.url('💭 Update Channel', 't.me/MyTestBotZ')]
