@@ -54,7 +54,8 @@ Server: AnonFile**
 **⍟ File name:** __{amjana.file.name}__
 **⍟ File size:** __{humanbytes(amjana.file.size)}__
 
-NOTE: Cant find notes. Its also anonymous 🤕'''
+NOTE: Cant find notes. Its also anonymous 🤕
+**© @MultiUploadBot❤️**'''
 	await msg.edit(hmm, buttons=(
 		[Button.url('🔗 Download Link', r.json()["data"]["file"]["url"]["short"])],
 		[Button.url('💭 Channel', 't.me/MyTestBotZ')]
