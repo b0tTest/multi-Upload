@@ -19,13 +19,6 @@ async def anonfile(event):
 		return await event.edit("Please Reply to File")
 
 	
-        #if event.is_private and not await check_participant(user_id, f'@{Config.CHNAME}', event):
-		#return
-	#if event.reply_to_msg_id:
-		#pass
-	#else:
-		#return await event.edit("Please Reply to File")
-
 	async with anjana.action(event.chat_id, 'typing'):
 		await asyncio.sleep(2)
 	msg = await event.reply("**Processing...**")
@@ -46,7 +39,7 @@ FileSize: {humanbytes(amjana.file.size)}
 		amjana.media.document,
 		msg,
 		time.time(),
-		f"**🏷 Downloading...**\n➲ **File Name:** {amjana.file.name}",
+		f"**🏷 Downloading...**\n➲ **File Name:** {amjana.file.name}\n",
 	)
 
 	async with anjana.action(event.chat_id, 'document'):
