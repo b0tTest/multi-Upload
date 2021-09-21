@@ -52,7 +52,8 @@ Server: TransferSH**
 **⍟ File name:** __{amjana.file.name}__
 **⍟ File size:** __{humanbytes(amjana.file.size)}__
 
-NOTE: Files will be deleted after 14 days.'''
+NOTE: Files will be deleted after 14 days.
+**© @MultiUploadBot❤️**'''
 	await msg.edit(hmm, buttons=(
 		[Button.url('🔗 Download Link', r.text)],
 		[Button.url('💭 Update Channel', 't.me/mytestbotz')]
