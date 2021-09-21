@@ -37,7 +37,7 @@ FileSize: {humanbytes(amjana.file.size)}
 		amjana.media.document,
 		msg,
 		time.time(),
-		f"**🏷 Downloading...**\n➲ **File Name:** {amjana.file.name}",
+		f"**🏷 Downloading...**\n➲ **File Name:** {amjana.file.name}\n",
 	)
 
 	async with anjana.action(event.chat_id, 'document'):
@@ -46,15 +46,16 @@ FileSize: {humanbytes(amjana.file.size)}
 		r = post(url, files={'file': open(f'{result.name}','rb')})
 	await anjana.action(event.chat_id, 'cancel')
 
-	hmm = f'''File Uploaded successfully !!
-Server: BayFiles
+	hmm = f'''**File Uploaded successfully !!
+Server: BayFiles**
 
-**~ File name:** __{amjana.file.name}__
-**~ File size:** __{humanbytes(amjana.file.size)}__
+**⍟ File name:** __{amjana.file.name}__
+**⍟ File size:** __{humanbytes(amjana.file.size)}__
+
 NOTE: Cant find notes. Its also anonymous 🤕'''
 	await msg.edit(hmm, buttons=(
-		[Button.url('📦 Download', r.json()["data"]["file"]["url"]["short"])],
-		[Button.url('Support Chat 💭', 't.me/hxsupport')]
+		[Button.url('🔗 Download Link', r.json()["data"]["file"]["url"]["short"])],
+		[Button.url('💭 Channel', 't.me/MyTestBotZ')]
 		))
 
 	os.remove(result.name)
