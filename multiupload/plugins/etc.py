@@ -26,7 +26,7 @@ async def start(event):
 		return
 	else:
 		await anjana.send_file(event.chat_id, random.choice(s), reply_to=event)
-		await event.reply(f"Hey [{xx.first_name}]({xx.id}),\n I am **MultiUploader** bot which can upload file to many cloud services \n\n**✦ Powered By [MyTestBotZ](https://telegram.me/MyTestBotZ) \n ✦ Made with ♥️ by @OO7ROBot**", buttons=[
+		await event.reply(f"Hey [{xx.first_name}]({xx.id}),\n I am **MultiUploader** bot which can upload file to many cloud services \n\n**✦ Powered By @MyTestBotZ \n✦ Made with ♥️ by @OO7ROBot**", buttons=[
 				Button.url('💭Channel', 't.me/mytestbotz')
 			])
 
