@@ -13,15 +13,15 @@ async def progress(current, total, event, start, type_of_ps):
     upload.py and download.py"""
     now = time.time()
     diff = now - start
-    if round(diff % 10.00) == 0 or current == total:
+    if round(diff % 5.00) == 0 or current == total:
         percentage = current * 100 / total
-        speed = current / diff
+        speed = current / diff * 5
         elapsed_time = round(diff) * 1000
         time_to_completion = round((total - current) / speed) * 1000
         estimated_total_time = elapsed_time + time_to_completion
         progress_str = "[{0}{1}]\n● **Percent:** {2}%\n".format(
-            "".join(["◾️" for i in range(math.floor(percentage / 12.5))]),
-            "".join(["▫️" for i in range(8 - math.floor(percentage / 12.5))]),
+            "".join(["🟩" for i in range(math.floor(percentage / 12.5))]),
+            "".join(["⬜️" for i in range(8 - math.floor(percentage / 12.5))]),
             round(percentage, 2),
         )
         tmp = progress_str + "● **Status:** {0} of {1}\n● **Speed:** {2}/s\n● **ETA:** {3}".format(
