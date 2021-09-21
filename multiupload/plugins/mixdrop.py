@@ -15,9 +15,7 @@ async def mixdrop(event):
 	user_id = event.sender_id
 	if event.is_private and not await check_participant(user_id, f'@{Config.CHNAME}', event):
 		return
-	if event.reply_to_msg_id:
-		pass
-	else:
+	if not event.reply_to_msg_id:
 		return await event.edit("Please Reply to File")
 
 	async with anjana.action(event.chat_id, 'typing'):
@@ -39,7 +37,7 @@ FileSize: {humanbytes(amjana.file.size)}
 		amjana.media.document,
 		msg,
 		time.time(),
-		f"**🏷 Downloading...**\n➲ **File Name:** {amjana.file.name}",
+		f"**🏷 Downloading...**\n➲ **File Name:** {amjana.file.name}\n",
 	)
 
 	async with anjana.action(event.chat_id, 'document'):
@@ -52,15 +50,16 @@ FileSize: {humanbytes(amjana.file.size)}
 		r = post(url, files={'file': open(f'{result.name}','rb')}, data=data)
 	await anjana.action(event.chat_id, 'cancel')
 
-	hmm = f'''File Uploaded successfully !!
-Server: MixDrop
+	hmm = f'''**File Uploaded successfully !!
+Server: MixDrop**
 
-**~ File name:** __{amjana.file.name}__
-**~ File size:** __{humanbytes(amjana.file.size)}__
+**⍟ File name:** __{amjana.file.name}__
+**⍟ File size:** __{humanbytes(amjana.file.size)}__
+
 NOTE: Files will be deleted after 60 days of inactivity.'''
 	await msg.edit(hmm, buttons=(
-		[Button.url('📦 Download', "https://mixdrop.co/f/"+r.json()['result']['fileref'])],
-		[Button.url('Support Chat 💭', 't.me/hxsupport')]
+		[Button.url('🔗 Download Link', "https://mixdrop.co/f/"+r.json()['result']['fileref'])],
+		[Button.url('💭 Update Channel', 't.me/MyTestBotZ')]
 		))
 
 	os.remove(result.name)
